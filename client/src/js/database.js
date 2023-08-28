@@ -29,7 +29,7 @@ export const putDb = async (content) =>{
   
    // Get confirmation of the request.
    const result = await request;
-  console.log('🚀 - data saved to the database', result);
+   console.log('Data saved to the database', result.value);
   }
   
 
@@ -45,8 +45,8 @@ export const getDb = async () =>{
   const request = store.getAll();
   // Get confirmation of the request.
   const result = await request;
-  console.log("result.value", result);
-  return result.value;
+  console.log("Data saved to the database", result.value);
+  return result?.value;
 }
 
 
