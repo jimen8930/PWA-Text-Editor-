@@ -4,15 +4,21 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "server": "nodemon server.js --ignore client"
+      "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+      "start": "npm run build && cd server && node server.js",
+      "server": "cd server nodemon server.js --ignore client",
+      "client": "cd client && npm start",
+      "build": "cd client && npm run build",
+      "install": "cd server && npm i && cd ../client && npm i"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "html-webpack-plugin": "^5.5.3"
     },
     "devDependencies": {
-        "nodemon": "^2.0.4"
+        "concurrently": "^5.2.0"
     }
 }

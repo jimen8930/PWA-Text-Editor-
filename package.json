@@ -4,12 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
-    "start": "npm run build && cd server && node server.js",
-    "server": "cd server nodemon server.js --ignore client",
-    "build": "cd client && npm run build",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "client": "cd client && npm start"
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "npm run --omit=dev start:dev",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "build": "",
+    "install": ""
   },
   "keywords": [],
   "author": "",
